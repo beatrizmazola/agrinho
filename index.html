@@ -1,0 +1,314 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Irrigação Inteligente</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: #e8f7ff;
+      color: #033b57;
+    }
+
+    /* CABEÇALHO */
+    header{
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topo{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo{
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* MENU HAMBURGER */
+    .hamburger{
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span{
+      width: 30px;
+      height: 4px;
+      background: white;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav{
+      display: none;
+      flex-direction: column;
+      margin-top: 15px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    nav a{
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      transition: 0.3s;
+      border-radius: 8px;
+    }
+
+    nav a:hover{
+      background: rgba(255,255,255,0.2);
+    }
+
+    nav.active{
+      display: flex;
+    }
+
+    /* HERO */
+    .hero{
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #caf0f8, #e8f7ff);
+    }
+
+    .hero h1{
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #0077b6;
+    }
+
+    .hero p{
+      font-size: 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* SEÇÕES */
+    section{
+      padding: 50px 20px;
+    }
+
+    .container{
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2{
+      text-align: center;
+      color: #0077b6;
+      margin-bottom: 25px;
+      font-size: 32px;
+    }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+    }
+
+    .card{
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+    }
+
+    .card h3{
+      color: #0096c7;
+      margin-bottom: 15px;
+    }
+
+    .card p{
+      line-height: 1.6;
+    }
+
+    /* IMAGEM */
+    .imagem{
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .imagem img{
+      width: 100%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* RODAPÉ */
+    footer{
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    /* RESPONSIVO */
+    @media (min-width: 768px){
+      nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background: transparent;
+      }
+
+      .hamburger{
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="topo">
+      <div class="logo">Agrinho 2026</div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <nav id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#tecnologia">Tecnologia</a>
+    </nav>
+  </header>
+
+  <!-- INÍCIO -->
+  <section class="hero" id="inicio">
+    <h1>Sistema de Irrigação Inteligente</h1>
+
+    <p>
+      A irrigação inteligente com gotejamento e sensores ajuda a economizar água
+      na fruticultura. O sistema libera apenas a quantidade necessária para cada planta,
+      evitando desperdícios e ajudando o meio ambiente.
+    </p>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2>Como Funciona</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>💧 Gotejamento</h3>
+          <p>
+            A água é liberada lentamente diretamente na raiz das plantas,
+            reduzindo perdas por evaporação.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📡 Sensores</h3>
+          <p>
+            Sensores analisam a umidade do solo e ativam a irrigação apenas
+            quando necessário.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🌱 Sustentabilidade</h3>
+          <p>
+            O uso consciente da água ajuda a preservar recursos naturais
+            e melhora a produção agrícola.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios">
+    <div class="container">
+      <h2>Benefícios</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Economia de Água</h3>
+          <p>
+            O sistema evita desperdícios utilizando somente a quantidade necessária.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Maior Produção</h3>
+          <p>
+            As frutas recebem água de forma equilibrada, melhorando a qualidade da colheita.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Menos Custos</h3>
+          <p>
+            A redução do consumo de água e energia diminui os gastos do produtor.
+          </p>
+        </div>
+      </div>
+
+      <div class="imagem">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop" alt="Irrigação inteligente">
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIA -->
+  <section id="tecnologia">
+    <div class="container">
+      <h2>Tecnologia no Campo</h2>
+
+      <p style="text-align:center; font-size:20px; line-height:1.8;">
+        A tecnologia é uma grande aliada da agricultura moderna. Com sensores,
+        automação e irrigação inteligente, é possível produzir mais alimentos
+        utilizando menos água, contribuindo para um futuro sustentável.
+      </p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>Projeto sobre irrigação inteligente e preservação da água.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+```
